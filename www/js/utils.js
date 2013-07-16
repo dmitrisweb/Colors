@@ -1,4 +1,5 @@
 ;(function () {
+	
 	// Accepts a template and data. Searches through the
 	// data, and replaces each key in the template, accordingly.
 	var attachTemplateToData = function(template, data) {
@@ -51,11 +52,21 @@
 	};
 
 	
-
-	
-	
 })();
 
+
+// PhoneGap bridge
+window.PG = (function(){
+	var navigator = navigator,
+		notification = navigator && navigator.notification;
+		
+	return {
+		vibrate: function(ms){
+			notification && notification.vibrate && notification.vibrate(ms);
+		}
+	}
+})();
+	
 
 
 /* Array.shuffle( deep ) - перемешать элементы массива случайным образом

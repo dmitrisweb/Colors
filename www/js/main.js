@@ -66,6 +66,7 @@
 		var handler = function(e){
 			e.preventDefault && e.preventDefault();
 			e.stopImmediatePropagation && e.stopImmediatePropagation();
+			PG.vibrate(500);
 			var el = $(this),
 				id = this.getAttribute('data-id');
 			
